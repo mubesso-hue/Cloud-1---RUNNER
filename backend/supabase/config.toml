@@ -1,0 +1,7 @@
+# Only the settings MailPulse needs. `supabase init` would generate a fuller file; this one is enough to deploy.
+project_id = "mailpulse"
+
+[functions.track]
+# The pixel and link redirects are fetched by recipients' mail clients, which have no Supabase JWT.
+# The private /api routes are protected by the TRACKER_SECRET header instead.
+verify_jwt = false
